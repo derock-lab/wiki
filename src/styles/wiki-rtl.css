@@ -1,0 +1,90 @@
+/* ================================
+   DEROCK RTL THEME FOR STARLIGHT
+   ================================ */
+
+:root {
+  direction: rtl;
+}
+
+/* فونت فارسی استاندارد */
+html, body {
+  font-family: Vazirmatn, IRANSans, system-ui, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* متن‌های اصلی */
+.sl-markdown-content {
+  font-size: 16px;
+  line-height: 2;
+}
+
+/* هدینگ‌ها */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3 {
+  letter-spacing: -0.02em;
+  font-weight: 800;
+}
+
+/* پاراگراف‌ها */
+.sl-markdown-content p {
+  line-height: 2.2;
+}
+
+/* لیست‌ها RTL */
+.sl-markdown-content ul,
+.sl-markdown-content ol {
+  padding-right: 1.2rem;
+  padding-left: 0;
+}
+
+/* کد بلاک */
+pre {
+  direction: ltr;
+  text-align: left;
+  border-radius: 12px;
+}
+
+/* inline code */
+code {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+/* sidebar RTL fix */
+.sidebar {
+  direction: rtl;
+}
+
+/* لینک‌ها */
+a {
+  text-underline-offset: 3px;
+}
+
+/* table RTL */
+table {
+  direction: rtl;
+  text-align: right;
+}
+
+/* blockquote فارسی */
+blockquote {
+  border-right: 4px solid hsl(var(--sl-color-accent));
+  border-left: none;
+  padding-right: 1rem;
+  padding-left: 0;
+  opacity: 0.85;
+}
+
+:root {
+  --sl-color-accent: #7c3aed; /* primary دِراک */
+}
+
+.sl-markdown-content {
+  max-width: 75ch;
+  margin: 0 auto;
+}
+
+p {
+  margin: 1rem 0;
+}
