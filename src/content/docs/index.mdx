@@ -1,40 +1,51 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
-hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
-  actions:
-    - text: Example Guide
-      link: /guides/example/
-      icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
-      icon: external
-      variant: minimal
+title: ویکی کارگاه فناوری دِراک
+description: مرجع فنی آردوینو، ESP، الکترونیک و ماژول‌ها
+---
+import { LinkCard } from '@astrojs/starlight/components';
+
+این ویکی یک مرجع فنی برای یادگیری، توسعه و استفاده عملی از **میکروکنترلرها و سیستم‌های الکترونیکی** است.
+
+هدف این دانشنامه این است که:
+- مفاهیم را ساده کند
+- مستقیماً به کاربرد واقعی وصل کند
+- و به عنوان مرجع پروژه‌های عملی استفاده شود
+
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+## 🚀 شروع سریع
 
-## Next steps
+بخش موردنظر خود را انتخاب کنید:
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
-</CardGrid>
+<div class="grid">
+
+<LinkCard 
+  title="مبانی الکترونیک" 
+  href="electronics-fundamentals"
+	description='
+  مفاهیم پایه‌ای برای درک مدارها و طراحی سخت‌افزار.
+  شامل: ولتاژ، جریان و ...'
+>
+</LinkCard>
+
+<LinkCard 
+  title="بردهای الکترونیکی" 
+  href="hardware-platforms"
+	description='معرفی و مستندات بردهای الکترنیکی شامل: آدوینو، ESP32 و ...'
+>
+</LinkCard>
+
+<LinkCard 
+  title="ماژول‌ها و قطعات" 
+  href="components-modules"
+	description='راهنمای سنسورها، عملگرها و ماژول‌های ارتباطی.'
+>
+</LinkCard>
+
+<LinkCard 
+  title="پروژه ها" 
+  href="components-modules"
+>
+</LinkCard>
+
+</div>

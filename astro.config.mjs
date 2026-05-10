@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'دانشنامه کارگاه فنّاوری دِراک',
+      title: 'ویکی کارگاه فنّاوری دِراک',
       customCss: ['./src/styles/wiki-rtl.css'],
 
       social: [
@@ -22,29 +22,53 @@ export default defineConfig({
         root: {
           label: 'فارسی',
           lang: 'fa-IR',
+          dir: 'rtl',
         },
       },
 
       sidebar: [
         {
-          label: 'خانه',
-          items: [{ label: 'صفحه اصلی', slug: '' }],
+          label: 'ویکی کارگاه فنّاوری دِراک',
+          items: [{ label: 'خانه', slug: '' }],
         },
 
-        {
-          label: 'پلتفرم‌های سخت‌افزاری',
-          items: [{ autogenerate: { directory: 'hardware-platforms' } }],
-        },
+        // {
+        //   label: 'مبانی الکترونیک',
+        //   items: [{ autogenerate: { directory: 'electronics-fundamentals' } }],
+        // },
 
         {
-          label: 'مبانی الکترونیک',
-          items: [{ autogenerate: { directory: 'electronics-fundamentals' } }],
+          label: 'برد های توسعه',
+          collapsed: false,
+          items: [
+            {
+              label: 'برد های آردوینو',
+              items: [
+                {
+                  autogenerate: {
+                    directory: 'hardware-platforms/arduino',
+                  },
+                },
+              ],
+            },
+
+            {
+              label: ' برد های اسپرسیف',
+              items: [
+                {
+                  autogenerate: {
+                    directory: 'hardware-platforms/espressif',
+                  },
+                },
+              ],
+            },
+          ],
         },
 
-        {
-          label: 'ماژول‌ها و قطعات',
-          items: [{ autogenerate: { directory: 'components-modules' } }],
-        },
+        // {
+        //   label: 'ماژول‌ها و قطعات',
+        //   items: [{ autogenerate: { directory: 'components-modules' } }],
+        // },
       ],
     }),
   ],
