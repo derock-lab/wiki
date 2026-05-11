@@ -7,6 +7,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'دانشنامه فنّاوری دِراک',
+      favicon: '/favicon.png',
       customCss: ['./src/styles/wiki-rtl.css'],
       logo: {
         src: './src/assets/img/logo-40.png', // مسیر لوگو

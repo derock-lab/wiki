@@ -30,6 +30,10 @@
   letter-spacing: -1px;
 }
 
+.sl-markdown-content {
+  text-align: justify;
+}
+
 .sl-markdown-content img {
   display: block;
   margin-inline: auto;
@@ -41,4 +45,26 @@
   text-align: center;
   display: block;
   margin-inline: auto;
+  letter-spacing: -1px;
+}
+
+.starlight-aside__icon {
+  transform: scaleX(-1);
+}
+
+.sl-link-button {
+  padding: 0.66em;
+}
+.sl-link-button.link {
+  margin: 0px;
+  /* border-color: lightgray; */
+}
+
+h3 {
+  /* font-weight: 100; */
+  font-size: smaller;
+}
+
+.sl-heading-wrapper.level-h3 {
+  margin-top: 0.5em;
 }
