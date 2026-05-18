@@ -9,6 +9,7 @@ export default defineConfig({
       title: 'دانشنامه الکترونیک دِراک',
       favicon: '/favicon.png',
       customCss: ['./src/styles/wiki-rtl.css'],
+      lastUpdated: true,
       logo: {
         src: './src/assets/img/logo-40.png', // مسیر لوگو
         alt: 'لوگو کارگاه فنّاوری دراک',
@@ -44,12 +45,16 @@ export default defineConfig({
 
         {
           label: 'برد های توسعه',
-          collapsed: true,
+          collapsed: false,
           items: [
             {
               label: 'آردوینو',
+              // collapsed: true,
               items: [
-                { label: 'معرفی آردوینو', link: 'platforms/arduino' },
+                {
+                  label: 'معرفی آردوینو',
+                  link: 'platforms/arduino',
+                },
                 {
                   label: 'مدل‌ها',
                   items: [
@@ -59,19 +64,29 @@ export default defineConfig({
                 {
                   label: 'راهنماها',
                   items: [
-                    { autogenerate: { directory: 'platforms/arduino/tutorials' } },
+                    {
+                      autogenerate: {
+                        directory: 'platforms/arduino/tutorials',
+                      },
+                    },
                   ],
                 },
                 {
-                  label: 'کتابخانه‌ها',
+                  label: 'پروژه‌ها',
                   items: [
-                    { autogenerate: { directory: 'platforms/arduino/libraries' } },
+                    {
+                      autogenerate: {
+                        directory: 'platforms/arduino/libraries',
+                      },
+                    },
                   ],
                 },
                 {
                   label: 'شیلد‌ها',
                   items: [
-                    { autogenerate: { directory: 'platforms/arduino/shields' } },
+                    {
+                      autogenerate: { directory: 'platforms/arduino/shields' },
+                    },
                   ],
                 },
               ],
