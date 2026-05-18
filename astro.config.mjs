@@ -52,7 +52,7 @@ export default defineConfig({
               // collapsed: true,
               items: [
                 {
-                  label: 'معرفی آردوینو',
+                  label:"آردوینو چیست؟",
                   link: 'platforms/arduino',
                 },
                 {
