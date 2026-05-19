@@ -48,7 +48,7 @@
 #         --gzip \
 #         --deleteRemoved
 
-image:  hub.hamdocker.ir/amazon/aws-cli:2
+image:  hub.hamdocker.ir/amazon/aws-cli
 
 stages:
   - test
