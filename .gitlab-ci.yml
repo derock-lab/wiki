@@ -12,9 +12,11 @@ cache:
 build_site:
   image: node:25
   stage: build
+  before_script:
+    - npm i -g pnpm
   script:
-    - npm ci
-    - npm run build
+    - pnpm ci
+    - pnpm build
   artifacts:
     paths:
       - dist/
