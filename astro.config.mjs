@@ -1,12 +1,14 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightImageZoom from 'starlight-image-zoom'
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://wiki.derock.ir',
   integrations: [
     starlight({
+      plugins: [starlightImageZoom()],
       title: 'ویکی دراک',
       description: 'آموزش‌ها، راهنماها و مستندات فنی کارگاه فناوری دراک',
 
