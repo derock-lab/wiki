@@ -1,49 +1,62 @@
+# stages:
+#   - build
+#   - deploy
+
+# image: node:25
+
+# variables:
+#   NODE_ENV: production
+
+# cache:
+#   paths:
+#     - node_modules/
+
+# before_script:
+#   # - npm config set registry https://package-mirror.liara.ir/repository/npm/ --global
+#   - npm config set registry https://hub.megan.ir/npm --global
+#   - npm ping
+
+# build_site:
+#   stage: build
+#   script:
+#     - npm i
+#     - npm run build
+#   artifacts:
+#     paths:
+#       - dist/
+#     expire_in: 1 hour
+#   only:
+#     - master
+
+# deploy_site:
+#   stage: deploy
+#   needs:
+#     - job: build_site
+#       artifacts: true
+#   only:
+#     - master
+#   script:
+#     # Use npx to run s3-deploy without needing to install it globally
+#     - npx s3-deploy './dist/**' \
+#         --cwd ./dist \
+#         --bucket wiki-derock \
+#         --endpoint s3.ir-thr-at1.arvanstorage.ir \
+#         --accessKeyId $ARVAN_ACCESS_KEY \
+#         --secretAccessKey $ARVAN_SECRET_KEY \
+#         --public \
+#         --preventUpdates \
+#         --gzip \
+#         --deleteRemoved
+
+image:  docker.arvancloud.ir/amazon/aws-cli:2
+
 stages:
-  - build
-  - deploy
+  - test
 
-image: node:25
-
-variables:
-  NODE_ENV: production
-
-cache:
-  paths:
-    - node_modules/
-
-before_script:
-  # - npm config set registry https://package-mirror.liara.ir/repository/npm/ --global
-  - npm config set registry https://hub.megan.ir/npm --global
-  - npm ping
-
-build_site:
-  stage: build
+test_aws_cli_image:
+  stage: test
   script:
-    - npm i
-    - npm run build
-  artifacts:
-    paths:
-      - dist/
-    expire_in: 1 hour
+    - echo "Checking amazon/aws-cli:2 image..."
+    - aws --version
   only:
-    - master
-
-deploy_site:
-  stage: deploy
-  needs:
-    - job: build_site
-      artifacts: true
-  only:
-    - master
-  script:
-    # Use npx to run s3-deploy without needing to install it globally
-    - npx s3-deploy './dist/**' \
-        --cwd ./dist \
-        --bucket wiki-derock \
-        --endpoint s3.ir-thr-at1.arvanstorage.ir \
-        --accessKeyId $ARVAN_ACCESS_KEY \
-        --secretAccessKey $ARVAN_SECRET_KEY \
-        --public \
-        --preventUpdates \
-        --gzip \
-        --deleteRemoved
+    - main
