@@ -2,6 +2,8 @@ stages:
   - build
   - deploy
 
+image: node:25
+
 variables:
   NODE_ENV: production
 
@@ -14,7 +16,6 @@ before_script:
   - npm ping
 
 build_site:
-  image: node:25
   stage: build
   script:
     - npm i
@@ -28,7 +29,6 @@ build_site:
 
 deploy_site:
   stage: deploy
-  image: node:25
   needs:
     - job: build_site
       artifacts: true
@@ -38,10 +38,10 @@ deploy_site:
     # Use npx to run s3-deploy without needing to install it globally
     - npx s3-deploy './dist/**' \
         --cwd ./dist \
-        --bucket "wiki-derock" \
-        --endpoint "s3.ir-thr-at1.arvanstorage.ir" \
-        --accessKeyId "$ARVAN_ACCESS_KEY" \
-        --secretAccessKey "$ARVAN_SECRET_KEY" \
+        --bucket wiki-derock \
+        --endpoint s3.ir-thr-at1.arvanstorage.ir \
+        --accessKeyId $ARVAN_ACCESS_KEY \
+        --secretAccessKey $ARVAN_SECRET_KEY \
         --public \
         --preventUpdates \
         --gzip \
