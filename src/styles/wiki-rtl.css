@@ -21,14 +21,14 @@
 :root {
   --sl-font: 'Vazirmatn', system-ui, sans-serif;
   --sl-color-accent: #00979C; /* primary دِراک */
-  --sl-color-accent-high: white;
+  /* --sl-color-accent-high: white; */
   /* --sl-color-text-accent: black; */
 }
 
 .site-title {
-  font-weight: 100;
+  /* font-weight: 100; */
   letter-spacing: -1px;
-  color: var(--sl-color-white);;
+  color: var(--sl-color-white);
 }
 
 .sl-markdown-content {

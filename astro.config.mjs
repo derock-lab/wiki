@@ -4,15 +4,21 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://wiki.derock.ir',
   integrations: [
     starlight({
-      title: 'ویکی‌دراک',
+      title: 'ویکی دراک',
       description: 'آموزش‌ها، راهنماها و مستندات فنی کارگاه فناوری دراک',
+
       favicon: '/favicon.png',
       customCss: ['./src/styles/wiki-rtl.css'],
       lastUpdated: true,
+      editLink: {
+        baseUrl: 'https://hamgit.ir/derock.ir/wiki/-/edit/master/',
+      },
       logo: {
-        src: './src/assets/img/logo-40.png', // مسیر لوگو
+        light: './src/assets/img/logo-light.png',
+        dark: './src/assets/img/logo-dark.png',
         alt: 'لوگو کارگاه فنّاوری دراک',
       },
       social: [
@@ -27,7 +33,6 @@ export default defineConfig({
           href: 'https://hamgit.ir/derock.ir/wiki',
         },
       ],
-
       defaultLocale: 'root',
       locales: {
         root: {
@@ -39,8 +44,8 @@ export default defineConfig({
 
       sidebar: [
         {
-          label: 'مدخل',
-          items: [{ label: '👋 راهنمای دانشنامه', slug: '' }],
+          label: 'خانه',
+          items: [{ label: '👋 راهنمای ویکی', slug: '' }],
         },
 
         // {
