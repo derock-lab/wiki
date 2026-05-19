@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "fix:dates": "pnpx @valtown/add-last-updated src/content"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.39.2",
