@@ -16,7 +16,7 @@ build_site:
     - npm config set registry https://hub.megan.ir/npm --global
     - npm ping
   script:
-    - npm ci
+    - npm i
     - npm run build   # Astro/Starlight builds into dist/
   artifacts:
     paths:
