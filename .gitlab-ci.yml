@@ -59,4 +59,4 @@ test_aws_cli_image:
     - echo "Checking amazon/aws-cli:2 image..."
     - aws --version
   only:
-    - main
+    - master
