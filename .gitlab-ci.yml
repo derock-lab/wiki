@@ -17,7 +17,7 @@ build_site:
     - npm ping
   script:
     - npm i
-    - npm build
+    - npm run build
   artifacts:
     paths:
       - dist/
