@@ -1,49 +1,13 @@
-# Starlight Starter Kit: Basics
+# ویکی دراک
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+ مخزن دانشنامه
+[کارگاه فناوری دراک](https://derock.ir)
 
-```
-pnpm create astro@latest -- --template starlight
-```
+## همکاری در ویکی دراک
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[ویکی دراک](https://wiki.derock.ir)
+یک دانشنامهٔ آزاد در حوزهٔ الکترونیک و رباتیک است که با هدف جمع‌آوری و به‌اشتراک‌گذاری دانش فنی ایجاد شده است. محتوای این ویکی به‌صورت متن‌باز در یک ریپازیتوری گیت نگهداری می‌شود و هر کسی می‌تواند در بهبود و گسترش آن مشارکت کند. اگر هنگام مطالعهٔ مقالات متوجه نقص، ابهام، یا اطلاعاتی شدید که می‌تواند کامل‌تر شود، مشارکت شما می‌تواند به دقیق‌تر و کاربردی‌تر شدن این دانشنامه کمک کند.
 
-## 🚀 Project Structure
+برای همکاری کافی است صفحهٔ موردنظر را در ریپازیتوری پروژه پیدا کرده و تغییرات خود را ثبت کنید. شما می‌توانید از طریق Pull Request اصلاحات، توضیحات بیشتر، مثال‌های عملی، یا حتی اصلاحات نگارشی را پیشنهاد دهید. حتی ویرایش‌های کوچک نیز ارزشمند هستند و به بهتر شدن کیفیت مطالب ویکی دراک کمک می‌کنند.
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
-```
-
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+اگر دربارهٔ ساختار مقالات، نحوهٔ ویرایش، یا روند مشارکت سوالی دارید، می‌توانید در همان ریپازیتوری یک Issue ثبت کنید. هدف این پروژه ساخت یک مرجع فارسی قابل اعتماد در زمینهٔ الکترونیک و رباتیک است که با مشارکت جامعهٔ علاقه‌مندان و متخصصان رشد می‌کند.
