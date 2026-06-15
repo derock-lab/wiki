@@ -12,6 +12,7 @@ keywords:
 lastModified: 2026-05-18
 lastUpdated: 2026-05-18
 ---
+import product01 from './products/arduino-smd+cable.json'
 import { Aside } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
 import { LinkCard } from '@astrojs/starlight/components';
@@ -162,6 +163,14 @@ Arduino Uno شناخته‌شده‌ترین و پراستفاده‌ترین ب
 	description="مطالعه مدخل در دانشنامه"
 >
 </LinkCard>
+
+#### سفارش
+
+<LinkCard
+  href={product01.link}
+  title={product01.title}
+  description="خرید از فروشگاه کارگاه فناوری دراک"
+/>
 
 ---
 
@@ -336,4 +345,3 @@ Arduino Due نسبت به بردهای کلاسیک AVR قدرت پردازشی 
 ### آیا استفاده از نسخه‌های چینی مشکلی ایجاد می‌کند؟
 
 برای اکثر پروژه‌های آموزشی و نمونه‌سازی، نسخه‌های چینی کاملاً قابل استفاده هستند و بسیاری از کاربران از آن‌ها استفاده می‌کنند. با این حال اگر پروژه نیاز به پایداری بالا، کیفیت صنعتی یا پشتیبانی رسمی داشته باشد، استفاده از نسخه اصلی توصیه می‌شود اگرچه به طور کلّی نمی توان نسخه های چینی را ناپایدار یا بی کیفیت دانست.
-
