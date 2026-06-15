@@ -15,9 +15,10 @@ build_site:
     # - npm config set registry https://package-mirror.liara.ir/repository/npm/ --global
     # - npm config set registry https://hub.megan.ir/npm --global
     - npm ping
+    - npm i -g pnpm
+    - pnpm i
   script:
-    - npm i
-    - npm run build   # Astro/Starlight builds into dist/
+    - pnpm build   # Astro/Starlight builds into dist/
   artifacts:
     paths:
       - dist/

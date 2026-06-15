@@ -1,7 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightImageZoom from 'starlight-image-zoom'
+import starlightImageZoom from 'starlight-image-zoom';
+import remarkGfm from 'remark-gfm';
 
 // https://astro.build/config
 export default defineConfig({
@@ -64,7 +65,7 @@ export default defineConfig({
               // collapsed: true,
               items: [
                 {
-                  label:"آردوینو چیست؟",
+                  label: 'آردوینو چیست؟',
                   link: 'platforms/arduino',
                 },
                 {
@@ -129,4 +130,7 @@ export default defineConfig({
       ],
     }),
   ],
+  markdown: {
+    remarkPlugins: [remarkGfm],
+  },
 });
