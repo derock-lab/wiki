@@ -17,7 +17,7 @@ export default defineConfig({
       customCss: ['./src/styles/wiki-rtl.css'],
       lastUpdated: true,
       editLink: {
-        baseUrl: 'https://hamgit.ir/derock.ir/wiki/-/edit/master/',
+        baseUrl: 'https://github.com/derocklab/wiki.derock.ir/edit/master/',
       },
       logo: {
         light: './src/assets/img/logo-light.png',
@@ -31,9 +31,9 @@ export default defineConfig({
           href: 'https://derock.ir',
         },
         {
-          icon: 'gitlab',
-          label: 'همگیت همروش',
-          href: 'https://hamgit.ir/derock.ir/wiki',
+          icon: 'github',
+          label: 'مخزن گیت هاب',
+          href: 'https://github.com/derocklab/wiki.derock.ir',
         },
       ],
       defaultLocale: 'root',
