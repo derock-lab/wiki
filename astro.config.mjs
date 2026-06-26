@@ -17,7 +17,7 @@ export default defineConfig({
       customCss: ['./src/styles/wiki-rtl.css'],
       lastUpdated: true,
       editLink: {
-        baseUrl: 'https://github.com/derocklab/wiki.derock.ir/edit/master/',
+        baseUrl: 'https://github.com/derock-lab/wiki/edit/master/',
       },
       logo: {
         light: './src/assets/img/logo-light.png',
@@ -33,7 +33,7 @@ export default defineConfig({
         {
           icon: 'github',
           label: 'مخزن گیت هاب',
-          href: 'https://github.com/derocklab/wiki.derock.ir',
+          href: 'https://github.com/derock-lab/wiki',
         },
       ],
       defaultLocale: 'root',
@@ -48,7 +48,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'خانه',
-          items: [{ label: '👋 راهنمای ویکی', slug: '' }],
+          items: [{ label: 'دانشنامه کارگاه فناوری دراک', slug: '' }],
         },
 
         // {
