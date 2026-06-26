@@ -107,6 +107,10 @@ export default defineConfig({
                   link: 'platforms/espressif/esp32',
                 },
                 {
+                  label: 'مقایسه ESP8266 و ESP32',
+                  link: 'platforms/espressif/comparing-esp8266-and-esp32',
+                },
+                {
                   label: 'مدل‌ها',
                   items: [
                     // { autogenerate: { directory: 'platforms/espressif/boards' } },
