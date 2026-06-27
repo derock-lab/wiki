@@ -60,6 +60,9 @@ export default defineConfig({
           label: 'برد های توسعه',
           collapsed: false,
           items: [
+            //----------------------------------------------------------------------
+            //-- Arduino
+            //----------------------------------------------------------------------
             {
               label: 'آردوینو',
               // collapsed: true,
@@ -69,7 +72,7 @@ export default defineConfig({
                   link: 'platforms/arduino',
                 },
                 {
-                  label: 'مدل‌ها',
+                  label: 'بردها',
                   items: [
                     { autogenerate: { directory: 'platforms/arduino/boards' } },
                   ],
@@ -84,36 +87,68 @@ export default defineConfig({
                     },
                   ],
                 },
-                {
-                  label: 'شیلد‌ها',
-                  items: [
-                    {
-                      autogenerate: { directory: 'platforms/arduino/shields' },
-                    },
-                  ],
-                },
+                // {
+                //   label: 'شیلد‌ها',
+                //   items: [
+                //     {
+                //       autogenerate: { directory: 'platforms/arduino/shields' },
+                //     },
+                //   ],
+                // },
               ],
             },
-
+            //----------------------------------------------------------------------
+            //-- ESP8266
+            //----------------------------------------------------------------------
             {
-              label: ' اسپرسیف',
+              label: 'ESP8266',
+              collapsed: true,
               items: [
                 {
-                  label: 'آشنایی با ESP8266',
-                  link: 'platforms/espressif/esp8266',
+                  label: 'ESP8266 چیست؟',
+                  link: 'platforms/esp8266',
+                },
+                // {
+                //   label: 'بردها',
+                //   items: [
+                //     { autogenerate: { directory: 'platforms/esp8266/boards' } },
+                //   ],
+                // },
+                // {
+                //   label: 'راهنماها',
+                //   items: [
+                //     {
+                //       autogenerate: {
+                //         directory: 'platforms/esp8266/tutorials',
+                //       },
+                //     },
+                //   ],
+                // },
+                // {
+                //   label: 'شیلد‌ها',
+                //   items: [
+                //     {
+                //       autogenerate: { directory: 'platforms/esp8266/shields' },
+                //     },
+                //   ],
+                // },
+              ],
+            },
+            //----------------------------------------------------------------------
+            //-- ESP32
+            //----------------------------------------------------------------------
+            {
+              label: 'ESP32',
+              collapsed: true,
+              items: [
+                {
+                  label: 'ESP32 چیست؟',
+                  link: 'platforms/esp32',
                 },
                 {
-                  label: 'آشنایی با ESP32',
-                  link: 'platforms/espressif/esp32',
-                },
-                {
-                  label: 'مقایسه ESP8266 و ESP32',
-                  link: 'platforms/espressif/comparing-esp8266-and-esp32',
-                },
-                {
-                  label: 'مدل‌ها',
+                  label: 'بردها',
                   items: [
-                    // { autogenerate: { directory: 'platforms/espressif/boards' } },
+                    { autogenerate: { directory: 'platforms/esp32/boards' } },
                   ],
                 },
                 {
@@ -121,19 +156,19 @@ export default defineConfig({
                   items: [
                     {
                       autogenerate: {
-                        directory: 'platforms/espressif/tutorials',
+                        directory: 'platforms/esp32/tutorials',
                       },
                     },
                   ],
                 },
-                {
-                  label: 'شیلد‌ها',
-                  items: [
-                    {
-                      autogenerate: { directory: 'platforms/espressif/shields' },
-                    },
-                  ],
-                },
+                // {
+                //   label: 'شیلد‌ها',
+                //   items: [
+                //     {
+                //       autogenerate: { directory: 'platforms/esp32/shields' },
+                //     },
+                //   ],
+                // },
               ],
             },
           ],
@@ -144,10 +179,10 @@ export default defineConfig({
         //   items: [{ autogenerate: { directory: 'components-modules' } }],
         // },
 
-        {
-          label: 'پروژه ها',
-          items: [{ autogenerate: { directory: 'projects' } }],
-        },
+        // {
+        //   label: 'پروژه ها',
+        //   items: [{ autogenerate: { directory: 'projects' } }],
+        // },
       ],
     }),
   ],
