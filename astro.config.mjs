@@ -108,12 +108,12 @@ export default defineConfig({
                   label: 'ESP8266 چیست؟',
                   link: 'platforms/esp8266',
                 },
-                // {
-                //   label: 'بردها',
-                //   items: [
-                //     { autogenerate: { directory: 'platforms/esp8266/boards' } },
-                //   ],
-                // },
+                {
+                  label: 'بردها',
+                  items: [
+                    { autogenerate: { directory: 'platforms/esp8266/boards' } },
+                  ],
+                },
                 // {
                 //   label: 'راهنماها',
                 //   items: [

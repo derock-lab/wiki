@@ -1,0 +1,175 @@
+---
+title: NodeMCU
+description: معرفی برد NodeMCU مبتنی بر ESP32 با 38 پایه
+lastUpdated: 2026-06-28
+---
+
+import product01 from '../assets/products/nodemcu+cable.json';
+
+import { Aside } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { LinkButton } from '@astrojs/starlight/components';
+import { LinkCard } from '@astrojs/starlight/components';
+
+**NodeMCU** یک پلتفرم اینترنت اشیاء (IoT) متن‌باز و کم‌هزینه است. این پلتفرم در ابتدا شامل یک فیرموِر بود که روی تراشه Wi-Fi مدل `ESP8266` از شرکت Espressif Systems اجرا می‌شد و سخت‌افزار آن بر پایه ماژول `ESP-12` ساخته شده بود.
+
+فیرموِر از زبان اسکریپت‌نویسی **Lua** استفاده می‌کند. این فیرموِر بر پایه پروژه متن‌باز **eLua** توسعه یافته و بر روی **Espressif Non-OS SDK** برای تراشه `ESP8266` ساخته شده است. همچنین از چندین پروژه متن‌باز دیگر مانند **lua-cjson** و **SPIFFS** (یک فایل‌سیستم فلش برای کنترلرهای تعبیه‌شده) استفاده می‌کند.
+
+طراحی اولیه این سیستم بر پایه ماژول **ESP-12** از خانواده `ESP8266` انجام شده است؛ تراشه‌ای که یک **سیستم روی چیپ** (SoC) Wifi با هسته **Tensilica Xtensa LX106** است و به‌طور گسترده در کاربردهای اینترنت اشیاء (IoT) استفاده می‌شود.
+
+
+<Aside type="note">
+هم فیرموِر و هم طراحی برد توسعه به‌صورت متن‌باز (Open Source) منتشر شده‌اند.
+</Aside>
+<Aside type="tip">
+نام **NodeMCU** ترکیبی از واژه‌های **Node** (یک گره از شبکه) و **MCU** (Microcontroller Unit) است. به‌طور دقیق‌تر، اصطلاح **NodeMCU** در اصل به **فیرموِر (Firmware)** اشاره دارد، نه به کیت‌های توسعه‌ای که بر اساس آن ساخته شده‌اند.
+</Aside>
+
+## تصاویر
+<Tabs>
+  <TabItem label="نمای روبرو">
+    ![NodeMCU Front](../assets/img/nodemcu-front.png)
+    *نمای روبروی برد NodeMCU*
+  </TabItem>
+  <TabItem label="نمای پشت">
+    ![NodeMCU Back](../assets/img/nodemcu-back.png)
+    *نمای پشت برد NodeMCU*
+  </TabItem>
+  <TabItem label="نقشه پایه ها">
+    ![ESP32 Pinout](../assets/img/nodemcu-pinout.jpg)
+  </TabItem>
+</Tabs>
+
+## فایل ها
+
+<Tabs>
+  <TabItem label="مستندات">
+    {/* <LinkButton href="/esp8266/nodemcu-pinout.pdf" variant="link" icon='document' iconPlacement='start'>
+      نقشه پایه‌ها
+    </LinkButton> */}
+    <LinkButton href="/esp8266/NODEMCU_DEVKIT_V1.0.PDF" variant="link" icon='document' iconPlacement='start'>
+      شماتیک مدار NodeMCU Devkit v1.0
+    </LinkButton>
+    <LinkButton href="/esp8266/ESP8266-Thing-Dev-v10.pdf" variant="link" icon='document' iconPlacement='start'>
+      شماتیک مدار Thing Dev v1.0
+    </LinkButton>
+    <LinkButton href="/esp8266/Manuel - NodeMCU Lua.pdf" variant="link" icon='document' iconPlacement='start'>
+      دیتاشیت NodeMCU Devkit v1.0
+    </LinkButton>
+    <LinkButton href="/esp8266/ESP12E-Datasheet.pdf" variant="link" icon='document' iconPlacement='start'>
+      دیتاشیت ESP12E
+    </LinkButton>
+  </TabItem>
+
+  <TabItem label="درایور">
+    <LinkButton href="/drivers/cp210x-win.rar" variant="link" icon='download' iconPlacement='start'>
+      درایور CP2102 برای Windows
+    </LinkButton>
+    {/* <LinkButton href="/drivers/cp2102-linux.zip" variant="link" icon='download' iconPlacement='start'>
+      درایور CP2102 برای Linux
+    </LinkButton> */}
+    <LinkButton href="/drivers/cp2102-mac.dmg" variant="link" icon='download' iconPlacement='start'>
+      درایور CP2102 برای macOS
+    </LinkButton>
+
+    <LinkButton href="/drivers/ch340-win.rar" variant="link" icon='download' iconPlacement='start'>
+      درایور CH340 برای Windows
+    </LinkButton>
+    <LinkButton href="/drivers/ch340-linux.zip" variant="link" icon='download' iconPlacement='start'>
+      درایور CH340 برای Linux
+    </LinkButton>
+    <LinkButton href="/drivers/ch340-mac.dmg" variant="link" icon='download' iconPlacement='start'>
+      درایور CH340 برای macOS
+    </LinkButton>
+  </TabItem>
+</Tabs>
+
+## مشخصات فنی
+## مشخصات فنی NodeMCU DevKit 1.0 (ESP8266)
+
+| ویژگی | مشخصات |
+|--------|--------|
+| میکروکنترلر | ESP8266EX |
+| معماری CPU | Tensilica L106 32-bit |
+| فرکانس کاری | 80 MHz (تا 160 MHz قابل تنظیم) |
+| حافظه RAM | حدود 50 KB قابل استفاده |
+| حافظه فلش | معمولاً 4MB (ماژول ESP-12E/F) |
+| وای‌فای | IEEE 802.11 b/g/n (2.4 GHz) |
+| بلوتوث | ندارد |
+| ولتاژ کاری | 3.0V تا 3.6V (معمولاً 3.3V) |
+| ولتاژ ورودی VIN | حدود 5V از طریق USB |
+| پورت USB | Micro-USB (با مبدل USB-to-Serial CH340 یا CP2102) |
+| GPIO | حدود 11 پایه GPIO قابل استفاده |
+| PWM | پشتیبانی نرم‌افزاری |
+| ADC | 1 کانال (10-bit, A0) |
+| UART | 1 رابط UART |
+| SPI | دارد |
+| I2C | نرم‌افزاری (Software I2C) |
+| I2S | پشتیبانی محدود |
+| پروتکل‌های شبکه | TCP/IP, HTTP, MQTT |
+| سیستم‌عامل/فریمور | NodeMCU (Lua), Arduino Core, MicroPython |
+| ابعاد | حدود 58mm × 31mm |
+| نوع برد | Development Board (DIP-style breadboard friendly) |
+| ماژول اصلی | ESP-12E / ESP-12F |
+| ویژگی خاص | WiFi داخلی + متن‌باز + مناسب IoT |
+
+
+
+## انواع
+دو نسخه از NodeMCU در دسترس است: نسخه‌های `0.9` و `1.0`.
+در نسخه `0.9` از ماژول **ESP-12** استفاده شده است، در حالی که نسخه `1.0` از ماژول **ESP-12E** بهره می‌برد که حرف **E** در آن مخفف واژه **Enhanced** (بهبود یافته) است.
+
+
+## تاریخچه
+
+**NodeMCU** مدت کوتاهی پس از معرفی تراشه `ESP8266` ایجاد شد. در تاریخ ۳۰ دسامبر ۲۰۱۳، شرکت [**Espressif Systems**](https://www.espressif.com/) تولید `ESP8266` را آغاز کرد.
+
+پروژه **NodeMCU** در ۱۳ اکتبر ۲۰۱۴ شروع شد، زمانی که [Hong](https://github.com/nodemcu/nodemcu-firmware/commit/9c98808289d0863a41c695e03d4067424fc1cdec) اولین فایل مربوط به فیرموِر **NodeMCU** را در GitHub کامیت کرد. دو ماه بعد، پروژه گسترش یافت و یک پلتفرم متن‌باز سخت‌افزاری نیز به آن اضافه شد؛ زمانی که توسعه‌دهنده **Huang R** فایل‌های Gerber مربوط به یک برد `ESP8266` با نام **DevKit v0.9** را منتشر کرد.
+![NodeMCU Dev Kit v0.9 schematic](../assets/img/NODEMCU_DEVKIT_SCH.png)
+*شماتیک مدار NodeMCU Dev Kit نسخه v0.9*
+
+در همان ماه، **Tuan PM** کتابخانه کلاینت MQTT را از پروژه Contiki به پلتفرم `ESP8266` منتقل کرد و آن را به پروژه **NodeMCU** اضافه نمود. از آن زمان، **NodeMCU** توانست از پروتکل اینترنت اشیاء MQTT پشتیبانی کند و با استفاده از Lua به MQTT broker متصل شود.
+
+یکی دیگر از به‌روزرسانی‌های مهم در ۳۰ ژانویه ۲۰۱۵ انجام شد؛ زمانی که **Devsaurus** کتابخانه **u8glib** را به **NodeMCU** پورت کرد. این قابلیت امکان کنترل آسان نمایشگرهایی مانند LCD، OLED و حتی VGA را برای **NodeMCU** فراهم کرد.
+
+در تابستان ۲۰۱۵، توسعه‌دهندگان اصلی پروژه فیرموِر را رها کردند و یک گروه از مشارکت‌کنندگان مستقل مسئول ادامه توسعه شدند. تا تابستان ۲۰۱۶، **NodeMCU** شامل بیش از ۴۰ ماژول مختلف شده بود.
+
+## در بازار
+
+سخت‌افزار **NodeMCU** متن‌باز است؛ بنابراین هر کسی می‌تواند آن را ویرایش، تغییر، تولید و نسخه‌های اصلاح‌شده خود را به‌عنوان برد توسعه **NodeMCU** وارد بازار کند.
+به همین دلیل، در بازار می‌توان بردهای توسعه **NodeMCU** را از تولیدکنندگان مختلف مشاهده کرد، از جمله: `Amica` ،`DOIT` ،`Lolin` ،`Wemos D1 mini` ،`AI-Thinker` و ...
+
+<Aside type="note">
+برخلاف آردوینو که یک شرکت مشخص وجود دارد و تا حدی نظم و استاندارد مشخصی را بر طراحی‌ها و مدل‌های موجود اعمال می‌کند، بردهای توسعه مبتنی بر `ESP8266` به‌صورت یکپارچه و سازمان‌یافته توسعه نیافته‌اند.
+همین موضوع باعث شده است که تنوع زیادی در طراحی‌ها، نسخه‌ها و نام‌گذاری بردهای مبتنی بر `ESP8266` وجود داشته باشد.
+</Aside>
+
+## راهنمای برنامه نویسی
+فیرموِر NodeMCU را می‌توان روی تراشه `ESP8266` فلش کرد. پس از انجام این کار، امکان برنامه‌نویسی دستگاه با استفاده از زبان اسکریپت‌نویسی **Lua** فراهم می‌شود.
+برنامه‌نویسی با Lua باعث می‌شود اتصال و توسعه برای `ESP8266` به‌مراتب ساده‌تر از ابزارهای رسمی ارائه‌شده توسط شرکت Espressif باشد، زیرا بسیاری از پیچیدگی‌های سطح پایین سخت‌افزار را پنهان کرده و یک رابط ساده‌تر برای توسعه در اختیار برنامه‌نویس قرار می‌دهد.
+<Aside type="tip">
+زبان **Lua** یک زبان برنامه‌نویسی دستوری (Imperative) و ساخت‌یافته (Structured) است که در سال ۱۹۹۳ توسط **Roberto Ierusalimschy**، **Luiz Henrique de Figueiredo** و **Waldemar Celes** ایجاد شد.
+این زبان بر پایه C و Perl طراحی شده و به‌گونه‌ای ساخته شده است که بسیار سبک (Lightweight) باشد.
+Lua در طیف گسترده‌ای از دستگاه‌های تعبیه‌شده (Embedded Devices) به کار رفته است؛ از کنسول‌های بازی ویدئویی گرفته تا ربات‌های صنعتی.
+
+وب‌سایت رسمی:
+[https://www.lua.org](https://www.lua.org/)
+</Aside>
+
+با گذشت زمان و با ظهور گزینه‌های جایگزین برای برنامه‌نویسی ESP8266—به‌ویژه زبان **`C++` در محیط Arduino** و همچنین گزینه‌هایی مانند **MicroPython**—علاقه به زبان Lua به‌طور قابل توجهی کاهش یافت.
+
+اگرچه برنامه‌نویسی با Lua از برخی جنبه‌ها جذاب و ساده بود، اما این زبان به اندازه `C++` و Python فراگیر و گسترده نیست. علاوه بر این، توسعه‌دهندگان هیچ‌گاه موفق نشدند آن را به‌طور کامل و پایدار روی ESP8266 تثبیت کنند. از سوی دیگر، چون Lua یک زبان تفسیرشونده (Interpreted) است و نه کامپایل‌شونده (Compiled)، از نظر کارایی و استفاده از منابع سخت‌افزاری عملکرد ضعیف‌تری دارد.
+
+<Aside type="note">
+در سال ۲۰۱۵، تیم توسعه اصلی فریمور NodeMCU توسعه و نگهداری آن را متوقف کرد. هرچند هنوز توسط جامعه متن‌باز توسعه داده می‌شود، اما میزان توجه و استفاده از آن تقریباً به‌طور کامل کاهش یافته است. به همین دلیل، امروزه بیشتر از «NodeMCU» به‌عنوان نام **برد توسعه** یاد می‌شود تا فریمور آن.
+</Aside>
+<Aside type="tip">
+با وجود کم‌رنگ شدن فریمور، نباید نقش مهم پروژه NodeMCU—چه در بخش فریمور و چه در قالب برد توسعه—را در گسترش و محبوبیت ESP8266 نادیده گرفت.
+</Aside>
+## سفارش
+
+<LinkCard
+  href={`${product01.link}?utm_source=wiki-derock`}
+  title={product01.title}
+  description="خرید از فروشگاه کارگاه فناوری دراک"
+/>
