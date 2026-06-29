@@ -1,5 +1,5 @@
 ---
-title: NodeMCU-32S (38 پین)
+title: NodeMCU 32S
 description: معرفی برد NodeMCU-32S مبتنی بر ESP32 با 38 پایه
 lastUpdated: 2026-06-27
 ---
@@ -11,16 +11,12 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 import { LinkButton } from '@astrojs/starlight/components';
 import { LinkCard } from '@astrojs/starlight/components';
 
-NodeMCU-32S یک برد توسعه مبتنی بر `ESP32` است که از میکروکنترلر دو هسته‌ای `Xtensa LX6` استفاده می‌کند. این برد دارای اتصال WiFi و Bluetooth داخلی بوده و برای پروژه‌های اینترنت اشیا (IoT) بسیار پرکاربرد است.
+**NodeMCU 32S** یک برد توسعه مبتنی بر `ESP32` است که از میکروکنترلر دو هسته‌ای `Xtensa LX6` استفاده می‌کند. این برد دارای اتصال WiFi و Bluetooth داخلی بوده و برای پروژه‌های اینترنت اشیا (IoT) بسیار پرکاربرد است.
 
-نسخه 38 پین این برد، تعداد بیشتری GPIO نسبت به نسخه‌های کوچک‌تر ارائه می‌دهد و امکان استفاده همزمان از رابط‌های متعدد مانند `SPI`، `I2C`، `UART` و `ADC` را فراهم می‌کند.
+این برد توسعه، طراحی کلاسیک [NodeMCU 1.0](https://en.wikipedia.org/wiki/NodeMCU) را حفظ کرده و بیشتر پایه‌های ورودی/خروجی را به هدرهای دو طرف برد منتقل کرده است. به این ترتیب، توسعه‌دهندگان می‌توانند بسته به نیاز خود، تجهیزات جانبی مختلف را به‌راحتی به برد متصل کنند.
 
 <Aside type="note">
 ESP32 توسط شرکت `Espressif Systems` توسعه داده شده و به دلیل قدرت پردازشی بالا و مصرف انرژی پایین، یکی از محبوب‌ترین چیپ‌های IoT محسوب می‌شود.
-</Aside>
-
-<Aside type="tip">
-NodeMCU-32S معمولاً از چیپ USB-to-Serial مدل `CP2102` یا `CH340` استفاده می‌کند.
 </Aside>
 
 ## تصاویر
@@ -67,6 +63,27 @@ NodeMCU-32S معمولاً از چیپ USB-to-Serial مدل `CP2102` یا `CH340
       درایور CP2102 برای macOS
     </LinkButton>
   </TabItem>
+
+  <TabItem label="فیرموِر کارخانه (Factory Firmware)">
+    <LinkButton href="/esp32/ai-thinker_nodemcu-32s_dio_32mbit_20170705.zip" variant="link" icon='download' iconPlacement='start'>
+      فیرمور کارخانه NodeMCU 32S
+    </LinkButton>
+    <Aside type="tip">
+    نسخه‌های اولیه **NodeMCU-32S** که توسط AI-Thinker عرضه می‌شدند، با **NodeMCU Firmware** از پیش نصب شده بودند.
+    این فایل همان فریمور کارخانه‌ای است که توسط AI-Thinker منتشر شده است و می‌تواند برای بازگرداندن برد به حالت اولیه استفاده شود.
+    </Aside>
+    <Aside type="note">
+    پس از نصب این فریمور، برد دیگر مانند یک برد Arduino عمل نمی‌کند، بلکه یک **مفسر Lua** روی آن اجرا می‌شود و از طریق پورت سریال می‌توانید مستقیماً دستورات `Lua` را اجرا کنید.
+    </Aside>
+    :::note
+    امروزه بیشتر کاربران از **Arduino IDE**، **PlatformIO** یا **ESP-IDF** برای توسعه نرم‌افزار روی ESP32 استفاده می‌کنند و استفاده از فریمور NodeMCU مبتنی بر Lua رایج نیست.
+    :::
+    <LinkCard
+      href="https://vdoc.ai-thinker.com/en/esp32/boards/nodemcu_32s"
+      title="راهنمای آپلود"
+      description="راهنمای آپلود فیرم‌ور کارخانه NodeMCU-32S"
+    />
+  </TabItem>
 </Tabs>
 
 ## مشخصات فنی
@@ -107,26 +124,27 @@ NodeMCU-32S معمولاً از چیپ USB-to-Serial مدل `CP2102` یا `CH340
 ## راهنمای برنامه‌نویسی
 
 NodeMCU-32S را می‌توان با `Arduino IDE`، `PlatformIO` یا `ESP-IDF` برنامه‌نویسی کرد.
+آپلود برنامه از طریق USB و UART (معمولاً `CP2102`) انجام می‌شود.
 
-برای Arduino IDE:
+### Arduino IDE
+
 - از Board Manager پکیج `ESP32 by Espressif Systems` را نصب کنید.
 - برد `ESP32 Dev Module` را انتخاب کنید.
 
-آپلود برنامه از طریق USB و UART (معمولاً CP2102 یا CH340) انجام می‌شود.
+
 
 ## تغذیه
 
 برد از طریق USB با ولتاژ `5V` تغذیه می‌شود و روی برد به `3.3V` تبدیل می‌گردد.
-
-<Aside type="danger">
-پایه‌های GPIO در ESP32 تحمل 5V ندارند و فقط با سطح منطقی 3.3V کار می‌کنند. اتصال مستقیم 5V ممکن است باعث آسیب دائمی شود.
-</Aside>
-
 پایه‌های تغذیه:
+
 - **VIN / 5V:** ورودی تغذیه از USB یا منبع خارجی
 - **3V3:** خروجی رگولاتور
 - **GND:** زمین
 
+<Aside type="caution">
+پایه‌های GPIO در ESP32 تحمل 5V ندارند و فقط با سطح منطقی 3.3V کار می‌کنند. اتصال مستقیم 5V ممکن است باعث آسیب دائمی شود.
+</Aside>
 ## حافظه
 
 ESP32 دارای:
