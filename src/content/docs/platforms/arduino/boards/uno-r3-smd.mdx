@@ -1,10 +1,11 @@
 ---
 title: Arduino UNO R3 SMD
 description: معرفی برد Arduino UNO R3 SMD مبتنی بر ATmega328P
-lastUpdated: 2026-06-15
+lastUpdated: 2026-06-30
 ---
 
-import product01 from '../assets/products/arduino-smd+cable.json'
+import products from '../assets/products/arduino-uno-smd.json';
+import ProductList from "@components/ProductList.astro";
 
 import { Aside } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
@@ -202,12 +203,6 @@ Arduino Uno را می‌توان با `Arduino Software (IDE)` برنامه‌ن
 - **مدار RESET قوی‌تر:**
 جایگزینی `ATmega16U2` به جای `ATmega8U2`.
 
+## خرید
 
-
-## سفارش
-
-<LinkCard
-  href={`${product01.link}?utm_source=wiki-derock`}
-  title={product01.title}
-  description="خرید از فروشگاه کارگاه فناوری دراک"
-/>
+<ProductList products={products} />

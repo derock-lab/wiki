@@ -9,9 +9,11 @@ keywords:
   - آموزش آردوینو
   - میکروکنترلر چیست
   - برد آردوینو
-lastUpdated: 2026-06-15
+lastUpdated:  2026-06-30
 ---
-import product01 from './assets/products/arduino-smd+cable.json'
+import unoSmdProducts from './assets/products/arduino-uno-smd.json';
+import ProductList from "@components/ProductList.astro";
+
 import { Aside } from '@astrojs/starlight/components';
 import { Steps } from '@astrojs/starlight/components';
 import { LinkCard } from '@astrojs/starlight/components';
@@ -163,13 +165,9 @@ Arduino Uno شناخته‌شده‌ترین و پراستفاده‌ترین ب
 >
 </LinkCard>
 
-#### سفارش
+#### خرید
 
-<LinkCard
-  href={`${product01.link}?utm_source=wiki-derock`}
-  title={product01.title}
-  description="خرید از فروشگاه کارگاه فناوری دراک"
-/>
+<ProductList products={unoSmdProducts} />
 
 ---
 

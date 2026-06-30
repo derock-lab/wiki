@@ -1,0 +1,30 @@
+---
+import { LinkCard } from '@astrojs/starlight/components';
+
+export type Product = {
+  title: string;
+  link: string;
+};
+
+export type Props = {
+  products: Product[];
+  icon?: string;
+  utmSource?: string;
+};
+
+const {
+  products,
+  icon = '📦',
+  utmSource = 'wiki-derock',
+} = Astro.props as Props;
+---
+
+{
+  products.map((product) => (
+    <LinkCard
+      href={`${product.link}?utm_source=${utmSource}`}
+      title={`${icon} ${product.title}`}
+      description="خرید از فروشگاه کارگاه فناوری دراک"
+    />
+  ))
+}
